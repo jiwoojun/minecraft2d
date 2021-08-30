@@ -1,5 +1,11 @@
+controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
+    if (true) {
+        steve.vy = -60
+    }
+})
+let steve: Sprite = null
 tiles.loadMap(tiles.createMap(tilemap`overworld`))
-let steve = sprites.create(img`
+steve = sprites.create(img`
     . . . e e e e e e e e e . . . . 
     . . . e d d d d d d d e . . . . 
     . . . . d f d d d f d . . . . . 
@@ -19,3 +25,4 @@ let steve = sprites.create(img`
     `, SpriteKind.Player)
 controller.moveSprite(steve, 100, 0)
 scene.cameraFollowSprite(steve)
+steve.ay = 100
