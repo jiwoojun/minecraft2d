@@ -1,5 +1,5 @@
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
-    if (true) {
+    if (steve.isHittingTile(CollisionDirection.Bottom)) {
         steve.vy = -60
     }
 })
