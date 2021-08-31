@@ -3,7 +3,24 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
         steve.vy = -60
     }
 })
+controller.up.onEvent(ControllerButtonEvent.Repeated, function () {
+    if (steve.isHittingTile(CollisionDirection.Bottom)) {
+        steve.vy = -60
+    }
+})
 let steve: Sprite = null
+scene.setBackgroundImage(img`
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+    f f . . . . . . . f f . f f f . . . . . . . . . . . . . . . 
+    f f f . . . . . f f f . . f . . . . . . . . . . . . . . . . 
+    f . f f . . . f f . f . . f . . . . . . . . . . . . . . . . 
+    f . . f f . f f . . f . . f . . . . . . . . . . . . . . . . 
+    f . . . f f f . . . f . . f . . . . . . . . . . . . . . . . 
+    f . . . . . . . . . f . . f . . . . . . . . . . . . . . . . 
+    f . . . . . . . . . f . f f f . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+    `)
 tiles.loadMap(tiles.createMap(tilemap`overworld`))
 steve = sprites.create(img`
     . . . e e e e e e e e e . . . . 
