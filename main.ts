@@ -9,18 +9,21 @@ controller.up.onEvent(ControllerButtonEvent.Repeated, function () {
     }
 })
 let steve: Sprite = null
+scene.setBackgroundColor(9)
 scene.setBackgroundImage(img`
-    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-    f f . . . . . . . f f . f f f . . . . . . . . . . . . . . . 
-    f f f . . . . . f f f . . f . . . . . . . . . . . . . . . . 
-    f . f f . . . f f . f . . f . . . . . . . . . . . . . . . . 
-    f . . f f . f f . . f . . f . . . . . . . . . . . . . . . . 
-    f . . . f f f . . . f . . f . . . . . . . . . . . . . . . . 
-    f . . . . . . . . . f . . f . . . . . . . . . . . . . . . . 
-    f . . . . . . . . . f . f f f . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+    777777777777777777777777777777777777777777777777777777777777
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    ffeeeeeeeffefffeffeeeeefefffffefffffeffffeefffffefffffefffff
+    fffeeeeefffeefeefffeeeefefeeeeefeeeeefeeffefeeefefeeeeeeefee
+    feffeeeffefeefeefeffeeefefeeeeefeeeeefeeefefeeefefeeeeeeefee
+    feeffeffeefeefeefeeffeefeffffeefeeeeefffffefffffeffffeeeefee
+    feeefffeeefeefeefeeeffefefeeeeefeeeeefffeeefeeefefeeeeeeefee
+    feeeeeeeeefeefeefeeeefffefeeeeefeeeeefefffefeeefefeeeeeeefee
+    feeeeeeeeefefffefeeeeeffefffffefffffefeeefefeeefefeeeeeeefee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
     `)
+pause(1000)
+game.splash("PRESS A TO START!!!!!!!!!!!!", "(pls)")
 tiles.loadMap(tiles.createMap(tilemap`overworld`))
 steve = sprites.create(img`
     . . . e e e e e e e e e . . . . 
