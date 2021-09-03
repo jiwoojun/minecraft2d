@@ -1,5 +1,5 @@
 {
-    "name": "minecraft2D",
+    "name": "minecraft",
     "description": "",
     "dependencies": {
         "device": "*",
