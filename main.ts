@@ -8,22 +8,18 @@ controller.up.onEvent(ControllerButtonEvent.Repeated, function () {
         steve.vy = -60
     }
 })
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    if (tiles.tileIsWall(tiles.locationInDirection(tiles.locationOfSprite(steve), CollisionDirection.Right))) {
+        if (tiles.tileAtLocationEquals(tiles.locationInDirection(tiles.locationOfSprite(steve), CollisionDirection.Right), assets.tile`bedrock`)) {
+            tiles.setWallAt(tiles.locationInDirection(tiles.locationOfSprite(steve), CollisionDirection.Right), false)
+            tiles.setTileAt(tiles.locationInDirection(tiles.locationOfSprite(steve), CollisionDirection.Right), assets.tile`air`)
+        } else {
+            tiles.setTileAt(tiles.locationInDirection(tiles.locationOfSprite(steve), CollisionDirection.Right), assets.tile`bedrock`)
+        }
+    }
+})
 let steve: Sprite = null
-scene.setBackgroundColor(9)
-scene.setBackgroundImage(img`
-    777777777777777777777777777777777777777777777777777777777777
-    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
-    ffeeeeeeeffefffeffeeeeefefffffefffffeffffeefffffefffffefffff
-    fffeeeeefffeefeefffeeeefefeeeeefeeeeefeeffefeeefefeeeeeeefee
-    feffeeeffefeefeefeffeeefefeeeeefeeeeefeeefefeeefefeeeeeeefee
-    feeffeffeefeefeefeeffeefeffffeefeeeeefffffefffffeffffeeeefee
-    feeefffeeefeefeefeeeffefefeeeeefeeeeefffeeefeeefefeeeeeeefee
-    feeeeeeeeefeefeefeeeefffefeeeeefeeeeefefffefeeefefeeeeeeefee
-    feeeeeeeeefefffefeeeeeffefffffefffffefeeefefeeefefeeeeeeefee
-    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
-    `)
-pause(1000)
-game.splash("PRESS A TO START!!!!!!!!!!!!", "(pls)")
+game.splash("MINECRAFT", "press A to start (pls)")
 tiles.loadMap(tiles.createMap(tilemap`overworld`))
 steve = sprites.create(img`
     . . . e e e e e e e e e . . . . 
